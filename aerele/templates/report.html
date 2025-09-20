@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Inventory Report{% endblock %}
+{% block content %}
+<h2>Product Balance by Location</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Warehouse</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+      {% for location in locations %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ location.name }}</td>
+          <td>{{ balances[(product.product_id, location.location_id)] }}</td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

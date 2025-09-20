@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ action }} Location{% endblock %}
+{% block content %}
+<h2>{{ action }} Location</h2>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.location_id.label(class="form-label") }}
+    {{ form.location_id(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.name.label(class="form-label") }}
+    {{ form.name(class="form-control") }}
+  </div>
+  <button type="submit" class="btn btn-success">{{ action }}</button>
+  <a href="/locations" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

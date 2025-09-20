@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Home - Inventory Management{% endblock %}
+{% block content %}
+<div class="py-5 text-center bg-white rounded-4 shadow-sm mb-4" style="margin-top:2rem;">
+  <h1 class="display-4 mb-3"><i class="fa-solid fa-warehouse me-2"></i>Inventory Management</h1>
+  <p class="lead mb-4">Easily manage your products, warehouse locations, and inventory movements with a modern, intuitive interface.</p>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-2 col-6 mb-2">
+      <a class="btn btn-primary btn-lg w-100" href="/products">
+        <i class="fa fa-box fa-lg me-2"></i> Products
+      </a>
+    </div>
+    <div class="col-md-2 col-6 mb-2">
+      <a class="btn btn-secondary btn-lg w-100" href="/locations">
+        <i class="fa fa-map-marker-alt fa-lg me-2"></i> Locations
+      </a>
+    </div>
+    <div class="col-md-2 col-6 mb-2">
+      <a class="btn btn-success btn-lg w-100" href="/movements">
+        <i class="fa fa-exchange-alt fa-lg me-2"></i> Movements
+      </a>
+    </div>
+    <div class="col-md-2 col-6 mb-2">
+      <a class="btn btn-info btn-lg w-100 text-white" href="/report">
+        <i class="fa fa-chart-bar fa-lg me-2"></i> Report
+      </a>
+    </div>
+  </div>
+  <img src="https://img.icons8.com/ios-filled/100/warehouse.png" alt="Warehouse" class="mb-3" style="opacity:0.15;">
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ action }} Product Movement{% endblock %}
+{% block content %}
+<h2>{{ action }} Product Movement</h2>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.product_id.label(class="form-label") }}
+    {{ form.product_id(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.from_location.label(class="form-label") }}
+    {{ form.from_location(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.to_location.label(class="form-label") }}
+    {{ form.to_location(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.qty.label(class="form-label") }}
+    {{ form.qty(class="form-control") }}
+  </div>
+  <button type="submit" class="btn btn-success">{{ action }}</button>
+  <a href="/movements" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Product Movements{% endblock %}
+{% block content %}
+<h2>Product Movements</h2>
+<a href="/movement/add" class="btn btn-primary mb-2">Add Movement</a>
+<table class="table table-bordered">
+  <thead><tr><th>ID</th><th>Timestamp</th><th>Product</th><th>From</th><th>To</th><th>Qty</th><th>Actions</th></tr></thead>
+  <tbody>
+    {% for m in movements %}
+    <tr>
+      <td>{{ m.movement_id }}</td>
+      <td>{{ m.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+      <td>{{ m.product_id }}</td>
+      <td>{{ m.from_location or '-' }}</td>
+      <td>{{ m.to_location or '-' }}</td>
+      <td>{{ m.qty }}</td>
+      <td><a href="/movement/edit/{{ m.movement_id }}" class="btn btn-sm btn-warning">Edit</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
